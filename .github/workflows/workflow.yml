@@ -6,3 +6,20 @@ jobs:
       steps:
           - name: echo string
             run: echo "hello world"
+    build-project:
+      name: build java application
+      runs-on: ubuntu-latest
+      steps:
+        - name: checkout Code
+          uses: actions/checkout@v2
+        - name: setup java
+          uses: actions/setup-java@v1
+        - name: caching dependences
+          uses: actions/cache@v1 (~/.sonar/cache + ~/.gradle/caches)
+        - name: build code
+          run: ./gradlew build sonarqube --info
+        - name: upload to artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            - name: code-package
+            - path: out/
