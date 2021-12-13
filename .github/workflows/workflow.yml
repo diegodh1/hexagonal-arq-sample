@@ -19,6 +19,9 @@ jobs:
             java-version: '11'
         - name: caching dependences
           uses: actions/cache@v2
+          with:
+            path: path/to/dependencies
+            key: ${{ runner.os }}-${{ steps.get-date.outputs.date }}-${{ hashFiles('**/lockfiles') }}
         - name: build code
           run: ./gradlew build sonarqube --info
         - name: upload to artifacts
