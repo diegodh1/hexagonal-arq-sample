@@ -11,7 +11,6 @@ jobs:
       steps:
         - name: checkout Code
           uses: actions/checkout@v2
-        - run: mkdir -p path/to/artifact
         - name: setup java
           uses: actions/setup-java@v2
           with:
@@ -28,4 +27,4 @@ jobs:
           uses: actions/upload-artifact@v2
           with:
             name: build
-            path: path/to/artifact/build
+            path: build
