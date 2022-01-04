@@ -40,7 +40,11 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications {
-        maven(MavenPublication) {
+        gpr(MavenPublication) {
+            groupId = 'org.group'
+            artifactId = 'artifact'
+            version = '0.1'
+
             from(components.java)
         }
     }
