@@ -3,7 +3,7 @@ on:
   release:
     types: [created]
     branches:
-      - main
+      - master
 jobs:
     build-project:
       name: build java application
