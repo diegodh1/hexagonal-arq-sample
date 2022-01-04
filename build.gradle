@@ -40,21 +40,19 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     repositories {
-        maven {
-            name = "Github"
-            url = uri("https://maven.pkg.github.com/diegodh1/hexagonal-arq-sample")
-            credentials {
-                username = System.getenv("GITHUB_USERNAME")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
+    maven {
+      name = "GitHubPackages"
+      url = "https://maven.pkg.github.com/diegodh1/hexagonal-arq-sample"
+      credentials {
+        username = System.getenv("GITHUB_ACTOR")
+        password = System.getenv("GITHUB_TOKEN")
+      }
     }
+  }
     publications {
-        register("jar", MavenPublication) {
+        create<MavenPublication>("default") {
             from(components["java"])
-            pom {
-                url.set("https://github.com/diegodh1/hexagonal-arq-sample.git")
-            }
+            // Include any other artifacts here, like javadocs
         }
     }
 }
