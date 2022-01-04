@@ -8,7 +8,7 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
     mavenLocal()
     maven {
         name = 'GitHubPackages'
@@ -39,7 +39,7 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     repositories {
-    jcenter()
+    mavenCentral()
     mavenLocal()
     maven {
         name = 'GitHubPackages'
