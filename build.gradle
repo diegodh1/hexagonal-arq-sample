@@ -8,9 +8,10 @@ plugins {
 }
 
 repositories {
+    jcenter()
     mavenLocal()
     maven {
-        name = 'Github'
+        name = 'GitHubPackages'
         url = 'https://maven.pkg.github.com/diegodh1/hexagonal-arq-sample'
         credentials {
             username = System.getenv("GITHUB_USERNAME")
@@ -40,16 +41,17 @@ java.sourceCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     repositories {
+    jcenter()
     mavenLocal()
     maven {
-        name = "GitHubPackages"
-        url = "https://maven.pkg.github.com/diegodh1/hexagonal-arq-sample"
-         credentials {
-            username = System.getenv("GITHUB_ACTOR")
+        name = 'GitHubPackages'
+        url = 'https://maven.pkg.github.com/diegodh1/hexagonal-arq-sample'
+        credentials {
+            username = System.getenv("GITHUB_USERNAME")
             password = System.getenv("GITHUB_TOKEN")
-            }
         }
     }
+}
     publications {
         mavenJava(MavenPublication) {
             from components.java
