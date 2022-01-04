@@ -10,11 +10,12 @@ plugins {
 repositories {
     mavenLocal()
     maven {
-        url = uri('https://repo.spring.io/release')
-    }
-
-    maven {
-        url = uri('https://repo.maven.apache.org/maven2/')
+        name = 'GitHubPackages'
+        url = 'https://maven.pkg.github.com/diegodh1/hexagonal-arq-sample'
+        credentials {
+            username = System.getenv("GITHUB_USERNAME")
+            password = System.getenv("GITHUB_TOKEN")
+        }
     }
 }
 
