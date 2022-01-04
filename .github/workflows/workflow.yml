@@ -29,4 +29,5 @@ jobs:
         - name: Publish package
           run: gradle publish
           env:
-            GITHUB_TOKEN: ${{ secrets.DIEGO }}
+            GITHUB_TOKEN: ${{ secrets.TKN }}
+            GITHUB_USERNAME: ${{ secrets.USER }}
