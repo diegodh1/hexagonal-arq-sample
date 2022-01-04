@@ -8,6 +8,9 @@ jobs:
     build-project:
       name: build java application
       runs-on: ubuntu-latest
+      permissions: 
+        contents: read
+        packages: write 
       steps:
         - name: checkout Code
           uses: actions/checkout@v2
